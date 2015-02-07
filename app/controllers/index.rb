@@ -16,6 +16,11 @@ post '/' do
   end
 end
 
+get '/logout' do
+  session.clear
+  redirect ('/')
+end
+
 not_found do
   erb :error
 end
