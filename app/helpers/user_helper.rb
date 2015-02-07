@@ -5,7 +5,6 @@ helpers do
   end
 
   def session_current_user
-    # User.find(5)
     user = User.find(session[:current_user_id])
     user
   end
