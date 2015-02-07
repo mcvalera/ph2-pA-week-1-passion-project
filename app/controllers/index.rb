@@ -6,7 +6,6 @@ post '/' do
   @user = User.create(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password])
   if @user.save
     session[:current_user_id] = @user.id
-    # does below params for email work syntax-wise?
     redirect "/accounts/#{params[:username]}"
   else
     # FIGURE OUT FLASH
