@@ -11,21 +11,29 @@ post '/accounts/login' do
   if db_password == params[:password]
     session[:current_user_id] = user.id
     redirect ('/accounts/' + user.username)
-    "hello!"
   else
+    # HOW TO STAY IN FORM WITH ENTRIES BUT DISPLAY ERRORS??
     "Your email or password did not match. Please try again."
     redirect ('/accounts/login')
   end
 end
 
 get '/accounts/:username/albums' do
+  "view all albums"
+end
 
+# TEST THIS LATER
+get '/accounts/:username/edit' do
+  @user = session_current_user
+  erb :edit_account
+
+  # WHAT NOW? erb? display confirmation?
 end
 
 put '/accounts/:username/edit' do
-  inputs = {first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password]}
-  session_current_user.update_attributes(inputs)
-  # WHAT NOW? erb? display confirmation?
+  # inputs = {first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password]}
+  session_current_user.update_attributes(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password])
+  redirect ('/accounts/:username')
 end
 
 # put '/article/:id/:code' do |id, password_string|
@@ -38,11 +46,16 @@ end
 #   @changed = true
 #   erb :'articles/edit'
 
-'/accounts/:username/delete'
+delete '/accounts/:username/delete' do
+  "delete albums"
+  # current_session_user.delete / destroy
+  # session.clear ?
+end
 
 get '/accounts/:username' do
   "this is the user's profile page"
-  @name = session_current_user.first_name
-  @username  = session_current_user.username
+  @user = session_current_user
+  # @name = session_current_user.first_name
+  # @username  = session_current_user.username
   erb :profile
 end

@@ -21,13 +21,13 @@ h1 #title {
 
 .container_wrapper {
   border: 1px solid gray;
-  max-width: 700px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .container {
   border: 1px solid gray;
-  max-width: 650px;
+  max-width: 90%;
   margin: 0 auto;
   margin-bottom: 50px;
 }
@@ -41,6 +41,19 @@ h1 #title {
 
 #required_star {
   color: #CC0000;
+}
+
+.profile_info {
+  width: 87%;
+  border: 1px solid red;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.albums_container {
+  width: 87%;
+  border: 1px solid red;
+  margin: 0 auto;
 }
 
 .error {
