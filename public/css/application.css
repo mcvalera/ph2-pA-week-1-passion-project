@@ -1,0 +1,49 @@
+h1 #title {
+
+}
+
+.navbar {
+  display: block;
+  border-bottom: 1px solid red;
+  text-align: center;
+}
+
+.navbar li {
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 10px;
+}
+
+.container_wrapper {
+  border: 1px solid gray;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.container {
+  border: 1px solid gray;
+  max-width: 650px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.login {
+  border: 1px solid gray;
+  max-width: 650px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+#required_star {
+  color: #CC0000;
+}
+
+.error {
+  text-align: center;
+  /*margin: 0 auto;*/
+}
