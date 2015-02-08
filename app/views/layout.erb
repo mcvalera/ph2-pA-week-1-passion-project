@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- LOGO -->
+  <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
   <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
@@ -21,14 +23,15 @@
 <body>
   <div class="navbar">
     <ul>
-
       <li><a href="/about">ABOUT</a></li>
+
     <% if session_logged_in? %>
       <li><a href="/logout">LOGOUT</a></li>
       <!-- see everyone's photos -->
       <li><a href="/">HOME</a></li>
       <!-- see your own photos -->
       <li><a href="/accounts/:username">PROFILE</a></li>
+
     <% else %>
       <li><a href="/accounts/login">LOGIN</a></li>
       <!-- REGISTER on navbar unnecessary. default is to have registration on home page/index -->

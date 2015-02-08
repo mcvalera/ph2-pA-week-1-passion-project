@@ -4,8 +4,6 @@ get '/accounts/login' do
 end
 
 post '/accounts/login' do
-  # FIGURE OUT SESSIONS
-  # implement validation and authentication
   user = User.find_by(email: params[:email])
   db_password = user.password
   if db_password == params[:password]

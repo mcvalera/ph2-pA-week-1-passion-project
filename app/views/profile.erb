@@ -6,11 +6,33 @@
   <% end %>
 
   <div class="profile_info">
-    <p>Username: <%= @user.username %></p>
-    <p>Name: <%= @user.first_name + " " + @user.last_name %></p>
-    <p>Albums: <%= current_users_albums.count %>   |   Photos: <%= current_users_photos.count %> </p>
-    <a href="/accounts/<%= @user.username %>/edit">edit</a>
-    <a href="/accounts/<%= @user.username %>/delete">delete your account</a>
+    <p><%= @user.username %></p>
+    <p><%= @user.first_name + " " + @user.last_name %></p>
+    <table id="post_count">
+      <tr>
+        <td>
+          <p>
+            <%= current_users_albums.count %><br>
+            albums
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= current_users_photos.count %><br>
+            photos
+          </p>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr id="edit_icons">
+        <td>
+          <a href="/accounts/<%= @user.username %>/edit"><img src="https://cdn4.iconfinder.com/data/icons/miu/22/editor_pencil_pen_edit_write_-20.png" /></a>
+          <a href="/accounts/<%= @user.username %>/delete"><img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_delete_48px-24.png" /></a>
+        </td>
+      </tr>
+    </table>
 
   </div>
 
