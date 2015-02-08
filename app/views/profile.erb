@@ -8,7 +8,7 @@
   <div class="profile_info">
     <p>Username: <%= @user.username %></p>
     <p>Name: <%= @user.first_name + " " + @user.last_name %></p>
-    <!-- # <p>Email: <%= @user.email %></p> -->
+    <p>Albums: <%= current_users_albums.count %>   |   Photos: <%= current_users_photos.count %> </p>
     <a href="/accounts/<%= @user.username %>/edit">edit</a>
     <a href="/accounts/<%= @user.username %>/delete">delete your account</a>
 

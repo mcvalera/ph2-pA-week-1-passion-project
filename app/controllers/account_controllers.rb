@@ -26,34 +26,28 @@ end
 get '/accounts/:username/edit' do
   @user = session_current_user
   erb :edit_account
-
-  # WHAT NOW? erb? display confirmation?
 end
 
 put '/accounts/:username/edit' do
-  # inputs = {first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password]}
   session_current_user.update_attributes(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password])
-  redirect ('/accounts/:username')
+  redirect ('/accounts/'+session_current_user.username)
 end
 
-# put '/article/:id/:code' do |id, password_string|
-#   @article = Article.find(id)
-#   @inputs = {title: params[:title],
-#     price: params[:price],
-#     email: params[:email],
-#     description: params[:description], category_id: params[:category_id]}
-#   @article.update_attributes(@inputs)
-#   @changed = true
-#   erb :'articles/edit'
+get '/accounts/:username/delete' do
+  @user = session_current_user
+  erb :delete_confirmation
+end
+  # redirect ('/accounts/'+@user.username+'/delete')
 
 delete '/accounts/:username/delete' do
-  "delete albums"
-  # current_session_user.delete / destroy
-  # session.clear ?
+  current_users_photos.each { |photo| photo.delete }
+  current_users_albums.each { |album| album.delete }
+  session_current_user.delete
+  session.clear
+  redirect ('/')
 end
 
 get '/accounts/:username' do
-  "this is the user's profile page"
   @user = session_current_user
   # @name = session_current_user.first_name
   # @username  = session_current_user.username
