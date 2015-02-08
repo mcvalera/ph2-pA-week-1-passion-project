@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Delete Profile</h1><br>
+
+  <form action="/accounts/<%= @user.username %>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <p>We're sad to see you go...</p>
+    <p>Are you sure you want to delete?</p><br>
+    <input type="submit" value="Yes, delete my account.">
+  </form>
+</div>
