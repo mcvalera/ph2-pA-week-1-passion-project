@@ -5,19 +5,14 @@ end
 
 post '/accounts/login' do
   user = User.find_by(email: params[:email])
-  db_password = user.password
+  db_password = user.password_hash
   if db_password == params[:password]
     session[:current_user_id] = user.id
     redirect ('/accounts/' + user.username)
   else
-    # HOW TO STAY IN FORM WITH ENTRIES BUT DISPLAY ERRORS??
-    "Your email or password did not match. Please try again."
-    redirect ('/accounts/login')
+    @error = "Your email or password did not match. Please try again."
+    erb :login
   end
-end
-
-get '/accounts/:username/albums' do
-  "view all albums"
 end
 
 # TEST THIS LATER
@@ -27,7 +22,7 @@ get '/accounts/:username/edit' do
 end
 
 
-# you can change first name and last name, but somehow it doesn't work for username, email password. possibly because of my validations??
+# it doesn't work for username but somehow works with everything else. pourquoiiiiiii ;_______;
 put '/accounts/:username/edit' do
   session_current_user.update_attributes(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password])
   redirect ('/accounts/'+session_current_user.username)
@@ -49,7 +44,6 @@ end
 
 get '/accounts/:username' do
   @user = session_current_user
-  # @name = session_current_user.first_name
-  # @username  = session_current_user.username
+  @photos = @user.photos
   erb :profile
 end

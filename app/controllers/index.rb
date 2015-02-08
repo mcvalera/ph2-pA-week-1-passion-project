@@ -9,10 +9,10 @@ post '/' do
     session[:current_user_id] = @user.id
     redirect "/accounts/#{params[:username]}"
   else
-    # FIGURE OUT FLASH
-    # flash[:error] =
-    "That didn't work out. Please try again."
-    redirect ('/')
+    @errors = @user.errors.full_messages
+    p @errors
+    erb :index
+    # redirect ('/')
   end
 end
 

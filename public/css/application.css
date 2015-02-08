@@ -1,8 +1,9 @@
-
+/*--- NAVBAR ---*/
 .navbar {
-  background-color: #004C66;
+  background-color: #525252;
+  /*#005C7A;*/
+  /*#004C66;*/
   display: block;
-  /*border-bottom: 1px solid red;*/
   text-align: center;
   height: 45px;
 }
@@ -25,8 +26,9 @@
   text-decoration: none;
 }
 
+/*--- WRAPPER OF MAIN BODY OF CONTENT (not including navbar) ---*/
+
 .container_wrapper {
-  /*background-image: url("https://lh3.googleusercontent.com/-s4zLGwmGAV8/VNb2kmlvU6I/AAAAAAAABAY/YRI-Jj_CyQw/w791-h593-no/IMG_5088.JPG");*/
   border: 1px solid gray;
   max-width: 100%;
   margin: 0 auto;
@@ -34,23 +36,46 @@
 
 .container_wrapper #title {
   margin-left: 50px;
-  font-family: 'Berkshire Swash', cursive;
-  font-size: 60px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-family: 'Stalemate', cursive;
+  color:  #934A6E;
+  /*font-family: 'Berkshire Swash', cursive;*/
+  font-size: 80px;
 }
 
+/*---  ---*/
+
 .container {
-  background-color: white;
-  border: 1px solid gray;
+  background-color: #F0F0F0;
+  border: 2px #A1A1A1;
   max-width: 90%;
   margin: 0 auto;
+  padding-top: 25px;
   margin-bottom: 50px;
 }
 
-.feed{
+/*--- INDEX ---*/
+
+.feed_index {
   width: 600px;
   text-align: center;
   margin: 0 auto;
+  border: 1px solid #ccc;
+  background-color: #E6E6E6;
 }
+
+.feed_index .img {
+  width: 600px;
+}
+
+.feed_caption {
+  text-align: left;
+  margin-left: 10px;
+  margin-left: 20px;
+}
+
+/*--- LOGIN.ERB ---*/
 
 .login {
   border: 1px solid gray;
@@ -59,9 +84,13 @@
   margin-bottom: 50px;
 }
 
+/*--- INDEX.ERB ---*/
+
 #required_star {
   color: #CC0000;
 }
+
+/*--- PROFILE.ERB ---*/
 
 .profile_info {
   width: 87%;
@@ -70,30 +99,47 @@
   margin-bottom: 25px;
 }
 
+.profile_feed_index {
+
+}
+
+.profile_feed_caption {
+
+}
+
 #post_count td {
   border: 1px solid #ccc;
   text-align: center;
   width: 60px;
 }
 
-#edit_icons td {
+#profile_icons td {
   width: 123px;
   text-align: center;
 }
 
-#edit_icons a {
+#profile_icons a {
   margin-left: 15px;
   margin-right: 15px;
 }
 
-.albums_container {
+/*--- where?? ---*/
+
+.photos_container {
   width: 87%;
   border: 1px solid #ccc;
   margin: 0 auto;
   margin-bottom: 30px;
 }
 
+.b {
+  font-weight: bolder;
+}
+
+/*--- ERROR PAGE :) ---*/
+
 .error {
   text-align: center;
   /*margin: 0 auto;*/
 }
+
