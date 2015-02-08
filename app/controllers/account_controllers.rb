@@ -26,6 +26,8 @@ get '/accounts/:username/edit' do
   erb :edit_account
 end
 
+
+# you can change first name and last name, but somehow it doesn't work for username, email password. possibly because of my validations??
 put '/accounts/:username/edit' do
   session_current_user.update_attributes(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password])
   redirect ('/accounts/'+session_current_user.username)
