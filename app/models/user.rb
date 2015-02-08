@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   has_many :photos, through: :albums
 
   validates :username, :email, :password_hash, presence: true
-  validates :username, :email, :password_hash, uniqueness: true
+
+  validates :username, :email, uniqueness: true
   validates_format_of :email, :with => /[\w]+[@][\w]+[.][\w]{2,}/
 
   def password

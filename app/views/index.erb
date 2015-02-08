@@ -2,13 +2,23 @@
 
   <% if session_logged_in? %>
     <% @photos.each do |photo| %>
-      <img class="feed" src="<%= photo.url %>" />
-      <p><%= photo.description %></p>
+      <div class="feed_index">
+        <img class="img" src="<%= photo.url %>" />
+        <div class="feed_caption">
+          <p><span class="b"><%= photo.user.username %></span>
+            <%= photo.description %></p>
+        </div>
+      </div>
       <br><br>
     <% end %>
   <% else %>
 
   <h1>Registration</h1><br>
+    <% if @errors != nil %>
+      <% @errors.each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    <% end %>
     <form action="/" method="post">
       First Name: <input type="text" name="first_name"><br>
       Last Name: <input type="text" name="last_name"><br>
