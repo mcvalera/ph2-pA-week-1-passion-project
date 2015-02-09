@@ -75,6 +75,14 @@
   margin-left: 20px;
 }
 
+.tagline {
+  font-size: smaller;
+}
+
+.tag {
+  text-decoration: underline;
+}
+
 /*--- LOGIN.ERB ---*/
 
 .login {

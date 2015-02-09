@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
 
   include BCrypt
 
-  has_many :albums
-  has_many :photos, through: :albums
+  has_many :photos
+  has_many :tags, through: :photos
 
   validates :username, :email, :password_hash, presence: true
 
