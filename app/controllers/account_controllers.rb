@@ -15,14 +15,12 @@ post '/accounts/login' do
   end
 end
 
-# TEST THIS LATER
 get '/accounts/:username/edit' do
   @user = session_current_user
   erb :edit_account
 end
 
-
-# it doesn't work for username but somehow works with everything else. pourquoiiiiiii ;_______;
+# bugs with username
 put '/accounts/:username/edit' do
   session_current_user.update_attributes(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password], img_url: params[:img_url])
   redirect ('/accounts/'+session_current_user.username)
@@ -32,7 +30,6 @@ get '/accounts/:username/delete' do
   @user = session_current_user
   erb :delete_confirmation
 end
-  # redirect ('/accounts/'+@user.username+'/delete')
 
 delete '/accounts/:username/delete' do
   current_users_tags.each { |tag| tag.delete }

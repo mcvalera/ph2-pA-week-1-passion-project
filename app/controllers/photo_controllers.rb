@@ -7,6 +7,7 @@ post '/accounts/:username/new_photos' do
   @user = session_current_user
   @photo = Photo.create(description: params[:description], url: params[:url], user_id: @user.id)
 
+# create tag/s if photo passes validations and is saved
   if @photo.save
     tags = params[:tag].split(", ")
     index = 0

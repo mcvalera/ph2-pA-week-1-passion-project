@@ -15,6 +15,10 @@ post '/' do
   end
 end
 
+get '/about' do
+  erb :about
+end
+
 get '/logout' do
   session.clear
   redirect ('/')
