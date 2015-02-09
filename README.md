@@ -4,20 +4,18 @@ P1) RESTful CRUD in MVC app with Sinatra / using AR / RESTful routes
     A user can edit their profile -- see page
     A user can delete their profile -- button in edit page
 
-    A user can create an album -- button in profile
-    A user can see all of their albums -- show in profile
-    A user can edit their album info -- see page
-    A user can delete their album -- button in edit page
-
     A user can add photos -- WHERE?
     A user can see all their photos -- show in specific album page
     A user can edit their photo info -- see page
     A user can delete a photo -- button in edit page
 
+    A user can view all of their tags
+    A user can add a tag to a photo
+
 P2) AR many to many relationship
-    A User has many albums, and many photos through albums.
-    An Album has many photos, and belongs to a User.
-    A Photo belongs to an Album.
+    A User has many photos, and many tags through photos.
+    A Photo has many tags, and belongs to a User.
+    A Tag belongs to a Photo, and has one User through Photo.
 
 P3) User Login and Authentication
 

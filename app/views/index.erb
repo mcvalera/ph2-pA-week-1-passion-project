@@ -5,8 +5,13 @@
       <div class="feed_index">
         <img class="img" src="<%= photo.url %>" />
         <div class="feed_caption">
-          <p><span class="b"><%= photo.user.username %></span>
+          <p><span class="b"><%= User.find(photo.user_id).username %></span>
             <%= photo.description %></p>
+            <p class="tagline">Tags:
+            <% photo.tags.each do |tag| %>
+              <span class="tag"><%= tag.description %></span>
+              <%= " " %>
+            <% end %></p>
         </div>
       </div>
       <br><br>

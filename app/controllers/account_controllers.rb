@@ -35,8 +35,8 @@ end
   # redirect ('/accounts/'+@user.username+'/delete')
 
 delete '/accounts/:username/delete' do
+  current_users_tags.each { |tag| tag.delete }
   current_users_photos.each { |photo| photo.delete }
-  current_users_albums.each { |album| album.delete }
   session_current_user.delete
   session.clear
   redirect ('/')
