@@ -4,8 +4,8 @@ P1) RESTful CRUD in MVC app with Sinatra / using AR / RESTful routes
     A user can edit their profile -- see page
     A user can delete their profile -- button in edit page
 
-    A user can add photos -- WHERE?
-    A user can see all their photos -- show in specific album page
+    A user can add photos -- from profile page
+    A user can see all their photos -- show in profile page
     A user can edit their photo info -- see page
     A user can delete a photo -- button in edit page
 
@@ -54,3 +54,10 @@ P5) AR validations, display validation errors in the view
 
       Modify the UI so a user is coerced into entering a valid date. Hint: Consider using a Datepicker.
       Modify the controller or model to be more flexible with the format of dates it accepts while still saving reasonable dates to the database. Hint: look into the rubygem Chronic.
+
+Photos I can use to upload:
+
+http://goo.gl/0xxt19
+http://goo.gl/b32uzV
+http://goo.gl/LhYvdw
+http://goo.gl/8p0SCg

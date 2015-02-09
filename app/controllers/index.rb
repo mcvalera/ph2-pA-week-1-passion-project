@@ -10,7 +10,6 @@ post '/' do
     redirect "/accounts/#{params[:username]}"
   else
     @errors = @user.errors.full_messages
-    p @errors
     erb :index
     # redirect ('/')
   end

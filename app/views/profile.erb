@@ -1,49 +1,63 @@
 <div class="container">
-  <% if @name == nil %>
-    <h2><%= @user.username %> </h2>
-  <% else %>
-    <h2><%= @user.name %> </h2>
-  <% end %>
+  <div id="profile_bar">
+    <ul>
+      <li>
+        <div class="user_photo">
+          <% if @user.img_url != nil %>
+            <img src="<%= @user.img_url %>">
+          <% else %>
+            <h2><%= @user.name %></h2>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div class="profile_info">
+          <p><span class="b"><%= @user.username %></span></p>
+          <p><%= @user.first_name + " " + @user.last_name %></p>
+          <table id="post_count">
+            <tr>
+              <td>
+                <p>
+                  <%= current_users_photos.count %><br>
+                  photos
+                </p>
+              </td>
+              <td>
+                <p>
+                  <%= current_users_tags.count %><br>
+                  tags
+                </p>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <table>
+            <tr id="profile_icons">
+              <td>
+                <a href="/accounts/<%= @user.username %>/new_photos"><img src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/photo-24-24.png" /></a>
+                <a href="/accounts/<%= @user.username %>/edit"><img src="https://cdn4.iconfinder.com/data/icons/miu/22/editor_pencil_pen_edit_write_-20.png" /></a>
+                <a href="/accounts/<%= @user.username %>/delete"><img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_delete_48px-24.png" /></a>
+              </td>
+            </tr>
+          </table>
 
-  <div class="profile_info">
-    <p><%= @user.username %></p>
-    <p><%= @user.first_name + " " + @user.last_name %></p>
-    <table id="post_count">
-      <tr>
-        <td>
-          <p>
-            <%= current_users_photos.count %><br>
-            photos
-
-          </p>
-        </td>
-        <td>
-          <p>
-            <%= current_users_tags.count %><br>
-            tags
-          </p>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <table>
-      <tr id="profile_icons">
-        <td>
-          <a href="/accounts/<%= @user.username %>/edit"><img src="https://cdn4.iconfinder.com/data/icons/miu/22/editor_pencil_pen_edit_write_-20.png" /></a>
-          <a href="/accounts/<%= @user.username %>/delete"><img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_delete_48px-24.png" /></a>
-        </td>
-      </tr>
-    </table>
-
+        </div>
+      </li>
+    </ul>
   </div>
 
   <div class="photos_container">
     <% @photos.each do |photo| %>
-      <div class="profile_feed_index">
+      <div class="feed_index">
         <img class="img" src="<%= photo.url %>" />
-        <div class="profile_feed_caption">
+        <div class="feed_caption">
           <p><span class="b"><%= photo.user.username %></span>
             <%= photo.description %></p>
+          <p class="tagline">Tags:
+            <% photo.tags.each do |tag| %>
+              <span class="tag"><%= tag.description %></span>
+              <%= " " %>
+            <% end %></p>
         </div>
       </div>
       <br><br>

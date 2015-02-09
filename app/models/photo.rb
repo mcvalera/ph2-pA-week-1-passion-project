@@ -5,4 +5,7 @@ class Photo < ActiveRecord::Base
 
   validates :description, length: { maximum: 200 }
 
+# so that most recent photos are always on top when displayed
+  default_scope { order(:id => :desc) }
+
 end
