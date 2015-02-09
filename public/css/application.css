@@ -215,6 +215,14 @@ label {
   padding-bottom: 40px;
 }
 
+/*--- ABOUT.ERB ---*/
+
+#about{
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
 /*--- where?? ---*/
 
 .photos_container {
