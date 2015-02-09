@@ -24,7 +24,7 @@ end
 
 # it doesn't work for username but somehow works with everything else. pourquoiiiiiii ;_______;
 put '/accounts/:username/edit' do
-  session_current_user.update_attributes(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password])
+  session_current_user.update_attributes(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password], img_url: params[:img_url])
   redirect ('/accounts/'+session_current_user.username)
 end
 

@@ -3,7 +3,8 @@
   <% if session_logged_in? %>
     <% @photos.each do |photo| %>
       <div class="feed_index">
-        <img class="img" src="<%= photo.url %>" />
+        <!-- class="img" -->
+        <img src="<%= photo.url %>" />
         <div class="feed_caption">
           <p><span class="b"><%= User.find(photo.user_id).username %></span>
             <%= photo.description %></p>
@@ -18,20 +19,27 @@
     <% end %>
   <% else %>
 
-  <h1>Registration</h1><br>
-    <% if @errors != nil %>
-      <% @errors.each do |error| %>
-        <p><%= error %></p>
-      <% end %>
-    <% end %>
-    <form action="/" method="post">
-      First Name: <input type="text" name="first_name"><br>
-      Last Name: <input type="text" name="last_name"><br>
-      Username: <input type="text" name="username"><span id="required_star">*</span><br>
-      Email: <input type="email" name="email"><span id="required_star">*</span><br>
-      Password: <input type="password" name="password"><span id="required_star">*</span><br>
-      <input type="submit" value="Submit">
-    </form>
+    <div id="registration">
+      <h1>Registration</h1><br>
+        <% if @errors != nil %>
+          <% @errors.each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        <% end %>
+        <form action="/" method="post">
+          <label>First Name:</label>
+          <input type="text" name="first_name"><br>
+          <label>Last Name:</label>
+          <input type="text" name="last_name"><br>
+          <label>Username:</label>
+          <input type="text" name="username"><span id="required_star">*</span><br>
+          <label>Email:</label>
+          <input type="email" name="email"><span id="required_star">*</span><br>
+          <label>Password:</label>
+          <input type="password" name="password"><span id="required_star">*</span><br>
+          <input type="submit" value="Submit">
+        </form>
+    </div>
 
   <% end %>
 </div>

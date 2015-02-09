@@ -32,6 +32,7 @@
   border: 1px solid gray;
   max-width: 100%;
   margin: 0 auto;
+  font-family: 'Lato', sans-serif;
 }
 
 .container_wrapper #title {
@@ -52,27 +53,30 @@
   max-width: 90%;
   margin: 0 auto;
   padding-top: 25px;
+  padding-bottom: 15px;
   margin-bottom: 50px;
 }
 
-/*--- INDEX ---*/
+/*--- In both Registration page when logged in as well as profile page ---*/
 
 .feed_index {
   width: 600px;
   text-align: center;
   margin: 0 auto;
   border: 1px solid #ccc;
-  background-color: #E6E6E6;
+  /*so that feed has room between container border*/
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.feed_index .img {
+.feed_index img {
   width: 600px;
 }
 
 .feed_caption {
   text-align: left;
-  margin-left: 10px;
-  margin-left: 20px;
+  padding-left: 20px;
+  /*border: 1px solid #ccc;*/
 }
 
 .tagline {
@@ -83,13 +87,36 @@
   text-decoration: underline;
 }
 
+/*--- Registration form in index ---*/
+
+#registration {
+  margin: 0 auto;
+  width: 50%;
+  padding-bottom: 40px;
+}
+
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+label, input {
+  display: inline-block;
+}
+
+label {
+  width: 30%;
+  margin-bottom: 10px;
+}
+
 /*--- LOGIN.ERB ---*/
 
 .login {
-  border: 1px solid gray;
-  max-width: 650px;
-  margin: 0 auto;
+  /*border: 1px solid gray;*/
+  width: 50%;
   margin-bottom: 50px;
+  padding-bottom: 40px;
+  margin: 0 auto;
 }
 
 /*--- INDEX.ERB ---*/
@@ -100,11 +127,39 @@
 
 /*--- PROFILE.ERB ---*/
 
-.profile_info {
-  width: 87%;
+#profile_bar {
+  display: block;
   border: 1px solid #CCC;
+  width: 87%;
   margin: 0 auto;
   margin-bottom: 25px;
+}
+
+#profile_bar ul {
+  margin: 0;
+}
+
+#profile_bar li {
+  display: inline-block;
+/*  margin-left: 35px;
+  margin-right: 35px;*/
+}
+
+.profile_info {
+  /*width: 87%;*/
+  width: 500px;
+  /*border: 1px solid #CCC;*/
+  /*margin: 0 auto;*/
+  margin-left: 30px;
+  margin-bottom: 25px;
+  position: relative;
+  top: 10px;
+}
+
+.user_photo img {
+  height: 150px;
+  position: relative;
+  top: 23px;
 }
 
 .profile_feed_index {
@@ -119,6 +174,7 @@
   border: 1px solid #ccc;
   text-align: center;
   width: 60px;
+  background-color:
 }
 
 #profile_icons td {
@@ -127,8 +183,36 @@
 }
 
 #profile_icons a {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#profile_icons img {
+  height: 26px;
+}
+
+/*--- ADD_PHOTO.ERB ---*/
+
+#add_photo {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/*--- EDIT_ACCOUNT.ERB ---*/
+
+#edit_profile {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/*--- DELETE_ACCOUNT.ERB ---*/
+
+#delete_profile {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 40px;
 }
 
 /*--- where?? ---*/
@@ -137,7 +221,8 @@
   width: 87%;
   border: 1px solid #ccc;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  /*padding-bottom: 30px;*/
 }
 
 .b {

@@ -4,7 +4,7 @@ User.create(first_name: "Clarisse", last_name: "Valera", username: "mcvalera", e
 
 my_id = User.find_by(email: "clangvalera@gmail.com").id
 
-my_imgs = ["http://goo.gl/FQHSKE", "http://goo.gl/e8Q2QX", "http://goo.gl/FGxs0V", "http://goo.gl/YrQHyM"]
+my_imgs = ["http://goo.gl/FQHSKE", "http://goo.gl/e8Q2QX", "http://goo.gl/FGxs0V", "http://goo.gl/YrQHyM", "http://goo.gl/V3hZhY"]
 
 5.times do
   Photo.create(description: "hello", user_id: my_id, url: my_imgs.sample)
@@ -28,14 +28,14 @@ end
 end
 
 url = ["http://goo.gl/rvDfJk", "http://goo.gl/qJDwQg", "http://goo.gl/WahDjb",
-  "http://goo.gl/SvGIOV", "http://goo.gl/lQZtM2", "http://goo.gl/hL4n9Q", "http://goo.gl/gBEYSz", "http://goo.gl/3uQGMr"]
+  "http://goo.gl/SvGIOV", "http://goo.gl/hL4n9Q", "http://goo.gl/3uQGMr"]
 
 15.times do
-  Photo.create(description: Faker::Lorem.word, user_id: rand(User.all.count), url: url.sample)
+  Photo.create(description: Faker::Lorem.word, user_id: (1..(User.all.count)).to_a.sample, url: url.sample)
 end
 
 15.times do
-  Tag.create(description: tags.sample, photo_id: rand(Photo.all.count) )
+  Tag.create(description: tags.sample, photo_id: (1..(Photo.all.count)).to_a.sample )
 end
 
 

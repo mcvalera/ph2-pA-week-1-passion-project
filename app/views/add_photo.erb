@@ -1,0 +1,22 @@
+<div class="container">
+
+  <% if @errors != nil %>
+    <% @errors.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+
+  <div id="add_photo">
+    <h1>Add Photo</h1><br>
+    <form action="/accounts/<%= @user.username %>/new_photos" method="post">
+      <label>Description:</label>
+       <input type="text" name="description"><br>
+      <label>Location:</label>
+       <input type="text" name="url" placeholder="http://goo.gl/VZ0HFK"><br>
+      <label>Tags:</label>
+       <input type="text" name="tag" placeholder="e.g. sunny day, ocean"><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</div>
